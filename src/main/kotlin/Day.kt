@@ -16,9 +16,9 @@ abstract class Day {
 
     }
 
-    fun test1(expected: Any) = check(solve1(readInput("day${day}_test")) == expected)
+    fun test1(expected: Any) = test(solve1(readInput("day${day}_test")), expected)
 
-    fun test2(expected: Any) = check(solve2(readInput("day${day}_test")) == expected)
+    fun test2(expected: Any) = test(solve2(readInput("day${day}_test")), expected)
 
     abstract fun solve1(lines: List<String>) : Any
 
@@ -28,4 +28,11 @@ abstract class Day {
         return javaClass.simpleName.replace("Day", "")
     }
 
+    private fun test(expected: Any, actual: Any) {
+        try {
+            check(expected==actual)
+        } catch (e: Exception) {
+            println("Expected $expected but was $actual.")
+        }
+    }
 }
