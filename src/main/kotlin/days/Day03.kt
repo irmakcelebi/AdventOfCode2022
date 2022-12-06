@@ -15,7 +15,7 @@ fun main() {
 
 class Day03 : Day() {
 
-    private lateinit var charPriorities : HashMap<Char, Int>
+    private lateinit var charPriorities: HashMap<Char, Int>
 
     init {
         initPriorities()
@@ -32,15 +32,13 @@ class Day03 : Day() {
         .sumOf { valueOf(it)!! }
 
 
-
     private fun initPriorities() {
-        charPriorities =  HashMap()
+        charPriorities = HashMap()
         ('a'..'z').toList()
             .plus('A'..'Z').toList()
             .mapIndexed { index, c -> charPriorities[c] = index + 1 }
     }
 
     private fun valueOf(char: Char) = charPriorities[char]
-
 
 }

@@ -30,7 +30,7 @@ abstract class Day {
 
     private fun test(expected: Any, actual: Any) {
         try {
-            check(expected==actual)
+            check(expected == actual)
         } catch (e: Exception) {
             println("Expected $expected but was $actual.")
         }
